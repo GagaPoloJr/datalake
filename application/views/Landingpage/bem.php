@@ -8,7 +8,7 @@
 
 
     <header>
-        <div class=" jumbotron jumbotron-fluid" id="header">
+        <div class="jumbotron jumbotron-fluid" id="header">
             <div class="container">
 
                 <br><br><br>

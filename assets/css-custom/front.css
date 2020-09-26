@@ -10,7 +10,6 @@
     }
     
     #header {
-        /* background-color: #daab43; */
         background-image: url(../img/wp1.jpg);
         background-attachment: fixed;
         height: 100vh;
@@ -18,7 +17,6 @@
         overflow: hidden;
         color: white;
         background-repeat: no-repeat;
-        /* background-attachment: scroll; */
         background-position: center center;
         background-size: cover;
     }
@@ -71,19 +69,6 @@
         100% {
             transform: scale(1, 1);
         }
-    }
-    
-    #header:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-image: url(../svg/wave-bottom.svg);
-        height: 400px;
-        background-repeat: no-repeat;
-        transform-origin: bottom;
-        animation: animateWave 2500ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
     
     #logo-bem {
@@ -232,20 +217,6 @@
         overflow: hidden;
         color: white;
         overflow-y: auto;
-    }
-    
-    .wave-container {
-        position: relative;
-        background: #164570;
-        color: #FFF;
-        text-align: center;
-        overflow: hidden;
-    }
-    
-    .wave-container>svg {
-        display: block;
-        transform-origin: bottom;
-        animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
     /* galeri artikel */
     
