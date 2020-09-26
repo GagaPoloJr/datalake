@@ -1,0 +1,486 @@
+footer.page-footer.font-small.stylish-color-dark.pt-4 {
+    color: black;
+}
+
+
+/* css untuk tentang */
+
+.masthead {
+    height: 100vh;
+    min-height: 120px;
+    background-image: url('../img/wp1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    /* display: flex; */
+    display: flex;
+    align-items: center;
+}
+
+#button-logo {
+    margin-bottom: 20px;
+    border-radius: 100px;
+    padding: 7px 25px;
+    background-color: transparent;
+    font-weight: 600;
+    letter-spacing: 0.0625em;
+    border-color: #daab43;
+}
+
+#button-logo:hover {
+    color: #ff4654;
+}
+
+#button-id {
+    margin-top: 50px;
+    color: white;
+}
+
+@media (max-width: 767.98px) {
+    .masthead {
+        height: 100vh;
+    }
+}
+
+.masthead-overlay {
+    position: absolute;
+    background: linear-gradient(280deg, rgba(2, 0, 36, 1) 0%, rgba(22, 69, 112, 1) 0%, rgba(15, 232, 233, 1) 100%);
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; */
+    opacity: .4;
+}
+
+@media (max-width: 410px) {
+    #content-container {
+        margin-top: 200px;
+    }
+}
+
+.font-tebal {
+    font-weight: 900;
+}
+
+.lead {
+    color: #daab43;
+    font-weight: 500;
+    letter-spacing: 0.0625em;
+}
+
+.nilai {
+    padding-top: 35px;
+}
+
+#nilai {
+    border-radius: 30px;
+    text-decoration: none;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 33px -28px rgba(0, 0, 0, 0.75);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+button.btn.btn-link.collapsed:hover {
+    color: #ff4654;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+button.btn.btn-link.collapsed {
+    color: #6c757d;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-link {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #ff4654 !important;
+    text-decoration: none;
+}
+
+#makna-logo {
+    background: linear-gradient(0deg, rgba(22, 69, 112, 1) 0%, rgba(15, 232, 233, 1) 0%, rgba(255, 255, 255, 0.4066001400560224) 100%);
+    width: 100%;
+    height: auto;
+}
+
+#logo-bem {
+    max-width: 50%;
+}
+
+#nama-logo {
+    letter-spacing: 0.0625em;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    background-color: transparent;
+    /* background-color: aliceblue; */
+    border-radius: 50px;
+    border-color: #daab43;
+}
+
+#makna-logo-card {
+    border-radius: 20px;
+    /* background-color: transparent */
+    box-shadow: 0px 0px 33px -15px rgba(0, 0, 0, 0.75);
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+#makna-logo-card .card-title {
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+#makna-logo-card .card-body {
+    padding: 10px;
+}
+
+@keyframes animateWave {
+    0% {
+        transform: scale(1, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.wave-container {
+    /* margin-top: -400px; */
+    position: relative;
+    background: rgba(15, 232, 233, 1);
+    color: #FFF;
+    text-align: center;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+.wave-container>svg {
+    display: block;
+    transform-origin: bottom;
+    animation: animateWave 3000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+#visi-misi {
+    width: 100%;
+    height: fit-content;
+    /* margin-top: -90px; */
+    /* background: linear-gradient(180deg, rgba(218, 171, 67, 1) 0%, rgba(105, 82, 0, 1) 100%); */
+    color: #6c757d;
+    z-index: 1;
+    /* position: absolute; */
+}
+
+#visi-misi h2 {
+    color: rgba(22, 69, 112, 1)!important;
+}
+
+@media (min-width:992px) {
+    #visi-misi {
+        margin-top: -90px;
+    }
+}
+
+h2.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    /* margin-bottom: 1rem; */
+}
+
+#nama-visi {
+    font-weight: 800;
+    letter-spacing: 0.0625em;
+    color: #6c757d;
+    text-transform: uppercase;
+    background-color: white;
+    padding: 2px 40px;
+    /* background-color: aliceblue; */
+    border-radius: 50px;
+    border-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
+/*----------------------- selesaii csas tentang ------------------------- */
+
+
+/*-----------------------  css proker ------------------------- */
+
+#judul-proker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 800;
+    text-shadow: 1px 0px 4px rgba(150, 150, 145, 1);
+}
+
+.card-container {
+    perspective: 700px;
+    display: grid;
+}
+
+.card-flip,
+.card-container {
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.card-flip div {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.card-back {
+    transform: rotateY(-180deg);
+    box-shadow: 0 4px 8px rgba(204, 204, 204, 0.75);
+}
+
+.card-container:hover .card-flip {
+    transform: rotateY(180deg);
+}
+
+
+/* efek hover agar tetap ditempat */
+
+.card-flip {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "frontAndBack";
+    transform-style: preserve-3d;
+    transform-box: all 0.5s ease;
+    margin: 15px;
+}
+
+.card-front {
+    grid-area: frontAndBack;
+    color: white;
+    border-radius: 20px;
+}
+
+#front-first {
+    background: url(../img/unsplash/creative.jpeg);
+    background-position: center;
+}
+
+#front-second {
+    background: url(../img/unsplash/data.jpg);
+    background-position: center;
+}
+
+#front-third {
+    background: url(../img/unsplash/night.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#front-fourth {
+    background: url(../img/unsplash/energy.jpg);
+    background-position: center;
+    background-size: cover;
+    /* opacity: .4; */
+}
+
+#front-fifth {
+    background: url(../img/unsplash/temu.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.card-back {
+    grid-area: frontAndBack;
+    transform: rotateY(-180deg);
+    padding: 15px;
+    color: black;
+}
+
+
+/*----------------------- selesaii css proker ------------------------- */
+
+
+/*----------------------- CSS Bem fakultas ------------------------- */
+
+.fakultas {
+    /* background: linear-gradient(324deg, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%); */
+    width: 100%;
+    height: auto;
+    /* animation: colorchange 10000ms linear infinite; */
+    /* -webkit-animation: colorchange 10000ms linear infinite alternate; */
+    /* Chrome and Safari */
+    background: linear-gradient(270deg, #246655, #164570, #daab43, #aeda43, #43dab7, #9643da);
+    background-size: 1200% 1200%;
+    -webkit-animation: AnimationName 50000ms ease infinite;
+    animation: AnimationName 50000ms ease infinite;
+}
+
+.judul-fakultas {
+    text-align: center;
+    font-weight: 1000;
+    color: white;
+    margin-top: 200px;
+}
+
+#circle {
+    /* margin-top: 30px; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    /* background-color: transparent; */
+    width: 300px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    #circle {
+        margin-left: auto;
+    }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    #circle {
+        margin-left: auto;
+    }
+}
+
+#wrap-circle {
+    transition: all .3s ease-in-out;
+    transform: scale(0.9);
+}
+
+#wrap-circle:hover {
+    transform: scale(0.95);
+}
+
+#caption {
+    font-weight: 700;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 16px;
+    background-color: #FFF;
+    border-radius: 20px;
+    padding: 10px 10px;
+}
+
+
+/*----------------------- selesaii csas bem fakultas ------------------------- */
+
+
+/*                           Halaman struktur BEM                               */
+
+.struktur-bem {
+    overflow-x: hidden;
+    margin-bottom: 50px;
+}
+
+.image-bem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    margin: 15px 0;
+    transition: all 500ms ease;
+    filter: grayscale(30%);
+}
+
+.image-bem:hover {
+    transform: scale(0.9);
+    filter: grayscale(0%);
+    box-shadow: 0px 0px 17px -4px rgba(0, 0, 0, 0.75);
+}
+
+
+/* halaman perbaikan */
+
+.perbaikan {
+    width: 100%;
+    height: 100vh;
+    /* Chrome and Safari */
+    background: linear-gradient(270deg, #246655, #164570, #daab43, #aeda43, #43dab7, #9643da);
+    background-size: 1200% 1200%;
+    -webkit-animation: AnimationName 50000ms ease infinite;
+    animation: AnimationName 50000ms ease infinite;
+    background-attachment: fixed;
+}
+
+.judul-perbaikan {
+    text-align: center;
+    font-weight: 1000;
+    color: white;
+    margin-top: 100px;
+}
+
+#button-perbaikan {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+    border-color: transparent;
+}
+
+#button-perbaikan:hover {
+    background: linear-gradient(324deg, rgba(56, 255, 156, 1) 0%, rgba(0, 98, 241, 1) 100%);
+    border-color: transparent;
+}
+
+#button-perbaikan:focus {
+    border-color: transparent;
+}
+
+
+/* animation */
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}

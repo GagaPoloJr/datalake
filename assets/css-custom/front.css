@@ -1,0 +1,333 @@
+    body {
+        background-color: #164570;
+        overflow-x: hidden;
+    }
+    
+    #header h1 {
+        font-size: 30px;
+        font-weight: 800;
+        text-align: left;
+    }
+    
+    #header {
+        /* background-color: #daab43; */
+        background-image: url(../img/wp1.jpg);
+        background-attachment: fixed;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        background-repeat: no-repeat;
+        /* background-attachment: scroll; */
+        background-position: center center;
+        background-size: cover;
+    }
+    
+    #header p {
+        /* font-size: px; */
+        padding-top: 10px;
+        /* padding-left: 100px; */
+        word-break: break-all;
+        max-width: 1000px;
+        text-align: left;
+    }
+    
+    @media (min-width: 992px) {
+        .bg-dark {
+            /* border: none; */
+            background-color: transparent !important;
+            transition: 750ms ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+        }
+        .bg-dark.shrink {
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            /* background-color: #212529 !important; */
+            background-color: #ff4654 !important;
+            /* background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12)!important; */
+        }
+        #header h1 {
+            font-weight: 800;
+            font-size: 70px;
+        }
+        #header p {
+            font-size: 20px !important;
+        }
+    }
+    
+    #mainNav .navbar-toggler {
+        padding: 0.75rem;
+        font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 0.75rem;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: #fed136;
+        border: 0;
+    }
+    
+    @keyframes animateWave {
+        0% {
+            transform: scale(1, 0);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+    
+    #header:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-image: url(../svg/wave-bottom.svg);
+        height: 400px;
+        background-repeat: no-repeat;
+        transform-origin: bottom;
+        animation: animateWave 2500ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
+    
+    #logo-bem {
+        max-width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    @media (max-width: 320px) {
+        #logo-bem {
+            width: 200px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        #logo-bem {
+            max-width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #header h1 {
+            text-align: center;
+        }
+        #header p {
+            text-align: center;
+        }
+    }
+    
+    @media (min-width: 992px) and (max-width: 1366px) {
+        #logo-bem {
+            max-width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+    .second-area {
+        background-color: #164570;
+        /* blue 164570 */
+        background-size: cover;
+        width: 100%;
+        /* background-image: url(../img/wp1.JPG); */
+        height: 60vh;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        overflow-y: auto;
+    }
+    /* #slide{
+                    width: 100%;
+                    height: 70%;
+                } */
+    /* .carousel-caption{
+                    height: 50%;
+                } */
+    
+    .carousel .item {
+        height: 300px;
+    }
+    
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #judul-berita {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.0685em;
+        background: #daab43;
+        padding: 20px;
+    }
+    
+    #empty-berita {
+        font-size: 20px !important;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    @media (max-width: 600px) {
+        #judul-berita {
+            font-size: medium;
+        }
+    }
+    /* #galeri-foto {
+                    /* padding: 20px; */
+    
+    #demo {
+        border-radius: 20px;
+        box-shadow: 0px 0px 34px -6px rgba(0, 0, 0, 1);
+    }
+    
+    @media (max-width: 600px) {
+        #galeri-foto {
+            max-width: 70%;
+            padding: 10px;
+        }
+    }
+    
+    .text-primary {
+        color: #daab43 !important;
+    }
+    
+    #drop-style {
+        font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 0.80rem;
+        color: black;
+        letter-spacing: 0.0625em;
+        text-transform: uppercase;
+    }
+    
+    #isi {
+        width: 100%;
+        height: fit-content;
+        /* margin-top: -550px;  */
+        background: white;
+        color: white;
+    }
+    
+    .isi-content {
+        box-shadow: 0px 0px 60px -44px rgba(0, 0, 0, 0.84);
+        margin-bottom: 100px;
+        margin-top: 50px;
+        padding: 20px;
+        /* z-index: 99; */
+    }
+    
+    .font-tebal {
+        font-weight: 900;
+    }
+    
+    .third-area {
+        background-color: #daab43;
+        /* blue 164570 */
+        background-size: cover;
+        width: 100%;
+        /* background-image: url(../img/wp1.JPG); */
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        overflow-y: auto;
+    }
+    
+    .wave-container {
+        position: relative;
+        background: #164570;
+        color: #FFF;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    .wave-container>svg {
+        display: block;
+        transform-origin: bottom;
+        animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
+    /* galeri artikel */
+    
+    #gambar-artikel {
+        width: 548.66px;
+        height: 300.41px;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    @media (min-width:992px) {
+        #gambar-artikel {
+            width: 548.66px;
+            height: 300.41px;
+        }
+    }
+    
+    .artikel-area {
+        overflow: hidden;
+    }
+    
+    .galeri-artikel {
+        padding: 0;
+        display: flex;
+    }
+    
+    .overlay-title {
+        position: absolute;
+        background: linear-gradient(0deg, rgba(22, 69, 112, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        width: 100%;
+        height: 100%;
+        transition: all 0.9s ease;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .overlay-title a {
+        text-decoration: none;
+        color: white;
+        transition: all 0.9s ease;
+    }
+    
+    .overlay-title a h4 {
+        margin-top: 100px;
+    }
+    
+    .overlay-title:hover {
+        opacity: .9;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    
+    .video-bem {
+        margin-top: 100px;
+    }
+    
+    @media (min-width:992px) {
+        .video-bem {
+            margin-top: 200px;
+        }
+    }
+    
+    .header-video {
+        background: #daab43;
+        padding: 30px;
+    }
+    
+    .responsive-youtube {
+        overflow: hidden;
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+        margin-bottom: 100px;
+    }
+    
+    .responsive-youtube iframe {
+        margin-top: 50px;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }

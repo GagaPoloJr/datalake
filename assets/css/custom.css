@@ -1,0 +1,28 @@
+        /**
+ *
+ * You can write your CSS code here, DO NOT touch the default JavaScript file
+ * because it will make it harder for you to update.
+ * 
+ */
+        /*# sourceMappingURL=custom.css.map */
+        
+        .navbar-bg {
+            background: rgb(38, 64, 175);
+            background: linear-gradient(90deg, rgba(38, 64, 175, 1) 0%, rgba(38, 64, 175, 1) 18%, rgba(37, 163, 189, 1) 100%);
+        }
+        
+        body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu>li.active>a:before {
+            background-color: rgba(38, 64, 175, 1)
+        }
+        
+        body.sidebar-mini .main-sidebar .sidebar-menu>li.active>a {
+            background-color: rgba(38, 64, 175, 1)
+        }
+        
+        .main-sidebar .sidebar-menu li.active a {
+            color: rgba(38, 64, 175, 1)
+        }
+        
+        .main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
+            color: rgba(38, 64, 175, 1)
+        }

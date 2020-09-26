@@ -1,0 +1,250 @@
+body {
+    background-color: #fafdfb;
+    color: #6c757d;
+}
+
+.bg-dark {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    /* background-color: #212529 !important; */
+    background-color: #ff4654 !important;
+    /* background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12)!important; */
+}
+
+.btn:focus,
+.btn:active,
+.btn:active:focus,
+.custom-select:focus,
+.form-control:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+
+.btn {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    padding: .3rem .8rem;
+    letter-spacing: .5px;
+}
+
+.btn-primary,
+.btn-primary.disabled {
+    box-shadow: 0 2px 6px #ff4654;
+    background-color: #ff6f7b;
+    border-color: #ff6f7b;
+}
+
+.btn-primary:focus,
+.btn-primary.disabled:focus {
+    background-color: #ff4654 !important;
+}
+
+.btn-primary:focus:active,
+.btn-primary.disabled:focus:active {
+    background-color: #ff4654 !important;
+}
+
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary.disabled:active,
+.btn-primary.disabled:hover {
+    background-color: #ff4654!important;
+    border-color: #ff6f7b;
+}
+
+.main-content,
+.content-utama {
+    transition: all .5s;
+}
+
+.content-utama {
+    padding-right: 30px;
+    padding-top: 150px;
+    width: 100%;
+    position: relative;
+}
+
+.main-content {
+    /* padding-left: 280px; */
+    padding-right: 30px;
+    padding-top: 100px;
+    width: 100%;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 150px;
+        width: 100% !important;
+    }
+    .content-utama {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 120px;
+        width: 100% !important;
+    }
+}
+
+#header-article {
+    font-weight: 700;
+    color: rgba(22, 69, 112, 1) !important;
+}
+
+#box-article {
+    border-radius: 12px;
+    transition: 300ms ease-in-out;
+}
+
+#box-article:hover {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 17px -4px rgba(0, 0, 0, 0.75);
+}
+
+.article-details {
+    background-color: transparent !important;
+    padding: 20px 20px 3px 20px !important;
+}
+
+.article-header .article-image {
+    border-radius: 12px;
+}
+
+
+/*                                               ini untuk content terbaru                                          */
+
+#article-utama {
+    box-shadow: 0 4px 8px rgba(204, 204, 204, 0.75);
+}
+
+#card-header-utama {
+    background-color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .content-utama article p {
+        float: left;
+    }
+    .content-utama article span {
+        float: left;
+    }
+}
+
+#card-header-utama h3 {
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px;
+}
+
+#image-utama {
+    border-radius: 0;
+}
+
+
+/*                           kolom aspirasi                 */
+
+#aspirasi-header {
+    color: #6c757d !important;
+}
+
+
+/*                                                          Pagination                  */
+
+.clearfix {
+    margin-top: 60px;
+}
+
+.page-item .page-link {
+    color: #6777ef;
+    border-radius: 3px;
+    margin: 0 3px;
+}
+
+.page-item.active .page-link {
+    background-color: #ff4654;
+    border-color: #ff6f7b;
+}
+
+.page-link {
+    border-color: transparent;
+    background-color: #f9fafe;
+    font-weight: 600;
+    transition: all 500ms ease;
+}
+
+.page-link:hover {
+    background-color: #ff6f7b;
+    color: #fff;
+    border-color: transparent;
+}
+
+.page-link:focus {
+    box-shadow: none;
+}
+
+
+/*                          ini untuk detail artikel                                         */
+
+#detail-artikel {
+    padding: 50px;
+}
+
+@media (max-width: 768px) {
+    #detail-artikel {
+        padding: 0;
+    }
+    .post-right {
+        margin-top: 20px;
+    }
+}
+
+.post-outer {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(204, 204, 204, 0.75);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+@media (min-width:992px) {
+    .post-outer {
+        margin-left: 100px;
+        padding: 3rem;
+        height: max-content;
+    }
+    .card-footer {
+        margin-top: 10em;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(32, 32, 32, 0.096);
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.card .card-header,
+.card .card-body,
+.card .card-footer {
+    background-color: transparent;
+    padding: 20px 25px;
+}
+
+#right-header {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+#header-h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#link-artikel {
+    text-decoration: none;
+    color: #6c757d;
+}

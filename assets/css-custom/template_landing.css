@@ -1,0 +1,455 @@
+html,
+body {
+    font-size: 14px !important;
+}
+
+h1 {
+    font-size: 1.602em;
+}
+
+h2 {
+    font-size: 1.424em;
+}
+
+h3 {
+    font-size: 1.266em;
+}
+
+h4 {
+    font-size: 1.125em;
+}
+
+h5 {
+    font-size: 0.889em;
+}
+
+h6 {
+    font-size: 0.79em;
+}
+
+.display-1 {
+    font-size: 3.906em;
+}
+
+.display-2 {
+    font-size: 3.125em;
+}
+
+.display-3 {
+    font-size: 2.5em;
+}
+
+.display-4 {
+    font-size: 2em;
+}
+
+
+/* // Medium devices (tablets, 48em and up) 
+// 
+// At this point you have overridden Bootstraps rem's and are
+// into module based font sizes should you require it. 
+//
+// I took a while over this change because I felt that there
+// is no reason why I cant use a modified scale on another 
+// device size. So I did, the headings have now taken on
+// "Perfect Fourth" and the dislpay-* has been put to the
+// Bootstrap defaults.
+//
+//------------------------------------------------------------*/
+
+@media (min-width: 48em) {
+    h1 {
+        font-size: 2.441em;
+    }
+    h2 {
+        font-size: 1.953em;
+    }
+    h3 {
+        font-size: 1.563em;
+    }
+    h4 {
+        font-size: 1.25em;
+    }
+    .display-1 {
+        font-size: 6em;
+    }
+    .display-2 {
+        font-size: 5.5em;
+    }
+    .display-3 {
+        font-size: 4.5em;
+    }
+    .display-4 {
+        font-size: 3.5em;
+    }
+}
+
+
+/* // Large devices (desktops, 62em and up) */
+
+@media (min-width: 62em) {
+    html,
+    body {
+        font-size: 16px !important;
+    }
+}
+
+
+/* // Extra large devices (large desktops, 75em and up) */
+
+@media (min-width: 75em) {
+    html,
+    body {
+        font-size: 18px !important;
+    }
+}
+
+@font-face {
+    font-family: "sf-pro";
+    src: url('../fonts/sfpro.ttf');
+}
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif, "sf-pro";
+}
+
+
+/* loading animation */
+
+@media (min-width:992px) {
+    .spin-logo #logo-animation {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .txt-loading {
+        font: bold 1.5em 'Montserrat', sans-serif !important;
+    }
+    .spin-logo #logo-animation {
+        bottom: 50px !important;
+    }
+}
+
+.spin-logo #logo-animation {
+    max-width: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: putar 1s infinite;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid #f25a41;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: spin 1s infinite linear;
+}
+
+.txt-loading {
+    font: bold 3em 'Montserrat', sans-serif;
+    text-align: center;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+}
+
+.txt-loading .letters-loading:before {
+    animation: letters-loading 4s infinite;
+    color: #fff;
+    content: attr(data-text-preloader);
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: rotateY(-90deg);
+}
+
+.txt-loading .letters-loading {
+    color: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.txt-loading .letters-loading:nth-child(2):before {
+    animation-delay: 0.2s;
+}
+
+.txt-loading .letters-loading:nth-child(3):before {
+    animation-delay: 0.4s;
+}
+
+.txt-loading .letters-loading:nth-child(4):before {
+    animation-delay: 0.6s;
+}
+
+.txt-loading .letters-loading:nth-child(5):before {
+    animation-delay: 0.8s;
+}
+
+.txt-loading .letters-loading:nth-child(6):before {
+    animation-delay: 1s;
+}
+
+.txt-loading .letters-loading:nth-child(7):before {
+    animation-delay: 1.2s;
+}
+
+.txt-loading .letters-loading:nth-child(8):before {
+    animation-delay: 1.6s;
+}
+
+.txt-loading .letters-loading:nth-child(9):before {
+    animation-delay: 1.8s;
+}
+
+.txt-loading .letters-loading:nth-child(10):before {
+    animation-delay: 2.0s;
+}
+
+.txt-loading .letters-loading:nth-child(11):before {
+    animation-delay: 2.2s;
+}
+
+.txt-loading .letters-loading:nth-child(12):before {
+    animation-delay: 2.4s;
+}
+
+@keyframes letters-loading {
+    0%,
+    75%,
+    100% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+    25%,
+    50% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes putar {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: linear-gradient(180deg, rgba(22, 69, 112, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.overlay-finish {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* end */
+
+.hidden {
+    transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+}
+
+.animating {
+    transition: transform .3s ease-in-out;
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+}
+
+.animating.top {
+    transform: translate3d(0, 100%, 0);
+}
+
+.animating.bottom {
+    transform: translate3d(0, -100%, 0);
+}
+
+.menu-visible {
+    top: auto;
+}
+
+#mainNav {
+    transition: 750ms ease-in-out;
+}
+
+.navbar-brand {
+    width: 200px;
+}
+
+.nav-item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.80rem;
+    color: #fff;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+    transition: all 400ms ease;
+}
+
+#drop-style {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.80rem;
+    color: black;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+}
+
+#drop-style:focus {
+    background: #ff4654;
+    color: white;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: #fed136;
+}
+
+.nav-item .dropdown .active {
+    color: #fed136 !important;
+}
+
+.active {
+    color: #fed136 !important;
+}
+
+.bg-dark {
+    background-color: #ff4654 !important;
+}
+
+@media (min-width: 992px) {
+    .bg-dark {
+        /* border: none; */
+        background-color: transparent !important;
+        transition: 750ms ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    }
+    .bg-dark.shrink {
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        /* background-color: #212529 !important; */
+        background-color: #ff4654 !important;
+        /* background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12)!important; */
+    }
+}
+
+#mainNav .navbar-toggler {
+    padding: 0.75rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.75rem;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #fed136;
+    border: 0;
+}
+
+#navbarNav .nav-item a .nav-link .active {
+    color: #f25a41;
+}
+
+.page-footer {
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    color: white !important;
+    font-family: 'Montserrat', sans-serif !important;
+    background-color: #164570 !important;
+}
+
+.footer-copyright a {
+    transition: 0.3s;
+}
+
+.footer-copyright a:hover {
+    color: #ff4654;
+}
+
+
+/* .text-primary {} */
+
+.fa-2x {
+    font-size: 24px;
+}
+
+@media (max-width:768px) {
+    .fa-2x {
+        font-size: 17px;
+    }
+}
+
+
+/* form aspirasi */
+
+
+/* aspirasi */
+
+.tombol-submit {
+    padding: 10px 50px;
+    border-radius: 25px;
+    background-color: #164570;
+    border-color: #164570;
+    transition: all 500ms ease;
+    box-shadow: 0px 0px 10px -1px #164570 !important;
+}
+
+.tombol-submit:hover {
+    background-color: #286baa !important;
+    border-color: rgb(32, 118, 144);
+    border-width: 3px;
+    box-shadow: 0px 0px 17px -1px rgb(63, 217, 255) !important;
+}
+
+#aspirasi-container {
+    margin-top: 20px;
+}
+
+#form-input {
+    box-shadow: 0 4px 8px rgba(204, 204, 204, 0.75);
+}
+
+
+/* li.nav-item.active {
+        background-color: #333;
+        color: #fff;
+    } */
