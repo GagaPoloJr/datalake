@@ -12,8 +12,9 @@ class Page extends CI_Controller
     {
         $this->load->database();
         $data['title'] = "Welcome to BEM UNDIP 2020";
-        $data['terbaru'] = $this->db->query('select * from post where status="yes" order by date_updated desc limit 6')->result();
+        $data['terbaru'] = $this->db->query('select * from buletin where status="yes" order by date_updated desc limit 6')->result();
         // $data['post'] = $this->Model_artikel->get_article();
+        $data['counting'] = $this->db->query('select * from database_bem')->row_array();
         $this->load->view("Landingpage/bem", $data);
     }
 

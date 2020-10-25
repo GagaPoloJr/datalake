@@ -1,5 +1,5 @@
     body {
-        background-color: #164570;
+        background-color: #ffffff;
         overflow-x: hidden;
     }
     
@@ -12,8 +12,7 @@
     #header {
         background-image: url(../img/wp1.jpg);
         background-attachment: fixed;
-        height: 100vh;
-        position: relative;
+        height: 90vh;
         overflow: hidden;
         color: white;
         background-repeat: no-repeat;
@@ -45,7 +44,7 @@
         }
         #header h1 {
             font-weight: 800;
-            font-size: 70px;
+            font-size: 60px;
         }
         #header p {
             font-size: 20px !important;
@@ -238,6 +237,8 @@
     
     .artikel-area {
         overflow: hidden;
+        background-color: #f5f9fd;
+        padding: 50px 0;
     }
     
     .galeri-artikel {
@@ -271,34 +272,46 @@
         background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     }
     
-    .video-bem {
-        margin-top: 100px;
-    }
-    
     @media (min-width:992px) {
-        .video-bem {
-            margin-top: 200px;
+        .fa {
+            font-size: 60px;
         }
     }
     
-    .header-video {
-        background: #daab43;
-        padding: 30px;
+    #wrapper-box h5 {
+        margin-top: 20px;
     }
     
-    .responsive-youtube {
-        overflow: hidden;
-        position: relative;
-        height: 0;
-        padding-bottom: 56.25%;
-        margin-bottom: 100px;
+    #wrapper-box {
+        background-color: #ffffff;
+        width: 50%;
+        border-radius: 10px;
+        box-shadow: 10px 7px 20px #DCDCDC;
+        margin-top: -60px;
+        z-index: 99;
+        padding: 50px;
     }
     
-    .responsive-youtube iframe {
-        margin-top: 50px;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
+    #gform {
+        box-shadow: 0px 0px 60px -44px rgba(0, 0, 0, 0.84);
+        width: 60%;
+        height: 960px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .undipangka {
+        /* background-color: #17a2b8;
+         */
+        background-image: url(../img/gerbangundip.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        color: #DCDCDC;
+        background-attachment: fixed;
+    }
+    
+    .undipangka .container {
+        padding: 20px;
     }

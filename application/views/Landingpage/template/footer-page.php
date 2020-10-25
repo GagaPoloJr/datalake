@@ -134,7 +134,7 @@
 
  </footer>
  <!-- Footer -->
- <style>
+ <!-- <style>
      #map {
          width: 100%;
          height: 500px;
@@ -145,9 +145,9 @@
      #find-us {
          margin-top: 20px;
      }
- </style>
+ </style> -->
  
- <script src="<?php echo base_url() . 'assets/modules/aos/aos.js' ?>"></script>
+ <script src="<?php echo base_url() . '../bemundip/assets/modules/aos/aos.js' ?>"></script>
  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
@@ -158,21 +158,7 @@
          overlay.classList.add('overlay-finish');
      })
 
-     function initMap() {
-         var macc = {
-             lat: -7.053920,
-             lng: 110.439067
-         };
-         var map = new google.maps.Map(
-             document.getElementById('map'), {
-                 zoom: 15,
-                 center: macc
-             });
-         var marker = new google.maps.Marker({
-             position: macc,
-             map: map
-         });
-     }
+   
  </script>
  <!-- data aos -->
  <script>
@@ -183,8 +169,7 @@
      });
  </script>
 
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX-YlpihWeTFluK0bJEKSOVpfYvQwgUuo&callback=initMap">
- </script>
+ 
 
 
  <script>
