@@ -5,16 +5,25 @@ class Page extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Model_artikel');
+        $this->load->model('Model_buletin');
+        $this->load->model('Model_informasi');
+
         $this->load->helper('text');
+		$this->load->helper('kebutuhan_helper');
+
     }
     public function index()
     {
         $this->load->database();
-        $data['title'] = "Welcome to BEM UNDIP 2020";
+        $data['title'] = "Welcome to DATALAKE BEM UNDIP 2020";
         $data['terbaru'] = $this->db->query('select * from buletin where status="yes" order by date_updated desc limit 6')->result();
         // $data['post'] = $this->Model_artikel->get_article();
         $data['counting'] = $this->db->query('select * from database_bem')->row_array();
+        $data['count_buletin'] = $this->db->query("select count(*) as total_b from buletin where status='yes'")->row_array();
+        $data['count_informasi'] = $this->db->query('select count(*) as total_in from informasi')->row_array();
+        $data['informasi'] = $this->Model_informasi->get_main_informasi(6);
+
+
         $this->load->view("Landingpage/bem", $data);
     }
 
@@ -28,66 +37,63 @@ class Page extends CI_Controller
         $data['title'] = "BEM Fakultas UNDIP";
         $this->load->view("Landingpage/bem_fakultas", $data);
     }
+    public function informasi()
+    {
+        $this->load->library('pagination');
 
+        $data['informasi'] = $this->Model_informasi->get_main_informasi(1);
+        $data['title'] = "Kumpulan Informasi BEM UNDIP 2020";
+        $this->db->from('informasi');
+        $config['total_rows'] = $this->db->count_all_results();
+        $data['total_rows'] = $config['total_rows'];
+        $config['per_page'] = 6;
+        // initialize
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
+        $data['informasi_post'] = $this->Model_informasi->getInformasi($config['per_page'], $data['start']);
+        $this->load->view("Page/informasi", $data);
 
+    }
+    public function detail_info($slug_title)
+    {
+        $this->load->model('Model_informasi', 'informasi');
+        $data['post'] = $this->informasi->detail_info($slug_title);
+        $data['right_post'] = $this->informasi->get_right_informasi();
+        $this->load->view('Page/detail_informasi', $data);
+    }
 
     public function maintanance()
     {
         $this->load->view("maintanance");
     }
-    public function list_artikel()
+    public function list_buletin()
     {
-        $this->load->library('pagination');
+        $this->load->library('pagination_buletin');
 
-        $data['utama'] = $this->Model_artikel->get_main_article();
+        $data['utama'] = $this->Model_buletin->get_main_buletin();
         $data['title'] = "Kumpulan Artikel BEM UNDIP 2020";
         // $data['post'] = $this->Model_artikel->get_article();
         // $data['post'] = $this->db->query('select * from post where status="yes" order by id desc')->result();
-        $this->db->from('post');
+        $this->db->from('buletin');
 
         $config['total_rows'] = $this->db->count_all_results();
         $data['total_rows'] = $config['total_rows'];
         $config['per_page'] = 6;
         // initialize
-        $this->pagination->initialize($config);
+        $this->pagination_buletin->initialize($config);
 
         $data['start'] = $this->uri->segment(3);
-        $data['post'] = $this->Model_artikel->getArticle($config['per_page'], $data['start']);
-        $data['kategori'] = $this->Model_artikel->get_kategori();
+        $data['post'] = $this->Model_buletin->getBuletin($config['per_page'], $data['start']);
 
-        $this->load->view("Page/artikel", $data);
+        $this->load->view("Page/buletin", $data);
     }
-    public function artikel_kategori($id)
+   
+    public function detail_buletin($slug_title)
     {
-        $this->load->library('pagination');
-
-        $data['utama'] = $this->Model_artikel->get_main_article();
-        $data['title'] = "Kumpulan Artikel BEM UNDIP 2020";
-        // $data['post'] = $this->Model_artikel->get_article();
-        // $data['post'] = $this->db->query('select * from post where status="yes" order by id desc')->result();
-        $this->db->from('post');
-
-        $config['total_rows'] = $this->db->count_all_results();
-        $data['total_rows'] = $config['total_rows'];
-        $config['per_page'] = 6;
-        // initialize
-        $this->pagination->initialize($config);
-
-        $data['start'] = $this->uri->segment(3);
-        $data['post'] = $this->Model_artikel->get_Article_kategori($id);
-        $data['post2'] = $this->Model_artikel->get_Article_kategori2($id);
-        $data['kategori'] = $this->Model_artikel->get_kategori();
-
-
-        $this->load->view("Page/artikel_kategori", $data);
-    }
-
-    public function detail_artikel($slug_title)
-    {
-        $this->load->model('Model_artikel', 'article');
-        $data['post'] = $this->article->detail($slug_title);
-        $data['right_post'] = $this->article->get_right_article();
-        $this->load->view('Page/detail_artikel', $data);
+        $this->load->model('Model_buletin', 'buletin');
+        $data['post'] = $this->buletin->detail($slug_title);
+        $data['right_post'] = $this->buletin->get_right_buletin();
+        $this->load->view('Page/detail_buletin', $data);
     }
 
 
@@ -103,16 +109,5 @@ class Page extends CI_Controller
         $this->load->view('Landingpage/struktur', $data);
     }
 
-    public function aspirasi()
-    {
-       
-        $this->load->model('Model_aspirasi', 'model_aspirasi');
-        $name = $this->input->post('name', TRUE);
-        $aspirasi = $this->input->post('aspirasi', TRUE);
-        $data = $this->model_aspirasi->insert_aspirasi($name, $aspirasi);
-        echo json_encode($data);
-        
-
-
-    }
+   
 }

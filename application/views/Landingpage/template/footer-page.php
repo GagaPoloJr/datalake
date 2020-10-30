@@ -5,6 +5,7 @@
          <h3 id="find-us">Find Us!</h3>
      </div>
      <div id="map">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.6173350651!2d110.43696421411181!3d-7.054170571084966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708d1a2239fb67%3A0xa2491cc6735a7b77!2sSekretariat%20BEM%20Undip!5e0!3m2!1sid!2sid!4v1598932441196!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
      </div>
      <div class="container text-center text-md-left">
          <!-- Grid row -->
@@ -134,18 +135,22 @@
 
  </footer>
  <!-- Footer -->
- <!-- <style>
+ <style>
      #map {
          width: 100%;
          height: 500px;
          background-color: grey;
          margin-top: 50px;
      }
+     #map iframe {
+         width: 100%;
+         height:100%;
+     }
 
      #find-us {
          margin-top: 20px;
      }
- </style> -->
+ </style>
  
  <script src="<?php echo base_url() . '../bemundip/assets/modules/aos/aos.js' ?>"></script>
  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

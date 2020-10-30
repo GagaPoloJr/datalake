@@ -9,13 +9,13 @@
 
 
   <!-- General CSS Files -->
-  <link rel="stylesheet" href="<?php echo base_url() . 'assets/modules/bootstrap/css/bootstrap.min.css' ?>">
-  <link rel="stylesheet" href="<?php echo base_url() . 'assets/modules/fontawesome/css/all.min.css' ?>">
-  <link rel="stylesheet" href="<?php echo base_url() . 'assets/modules/aos/aos.css' ?>">
+  <link rel="stylesheet" href="<?php echo base_url() . '../bemundip/assets/modules/bootstrap/css/bootstrap.min.css' ?>">
+  <link rel="stylesheet" href="<?php echo base_url() . '../bemundip/assets/modules/fontawesome/css/all.min.css' ?>">
+  <link rel="stylesheet" href="<?php echo base_url() . '../bemundip/assets/modules/aos/aos.css' ?>">
 
   <!-- Template CSS -->
   <!-- <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/style.css' ?>"> -->
-  <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/components.css' ?>">
+  <link rel="stylesheet" href="<?php echo base_url() . '../bemundip/assets/css/components.css' ?>">
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/css-custom/template_landing.css' ?>">
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/css-custom/artikel.css' ?>">
   <link rel="stylesheet" href="<?php echo base_url() . 'assets/css-custom/tentang.css' ?>">
@@ -44,15 +44,15 @@
             <?php foreach ($utama as $tampil) { ?>
               <article class="article">
                 <div class="article-header">
-                  <div id="image-utama" class="article-image" data-background="<?php echo base_url() . 'assets/images/' . $tampil->thumbnail ?>">
+                  <div id="image-utama" class="article-image" data-background="<?php echo base_url() . '../bemundip/assets/images/' . $tampil->thumbnail ?>">
                   </div>
                   <div class="article-title">
-                    <h2><a href="<?php echo base_url() . 'page/detail_artikel/' . $tampil->slug_title ?>"><?php echo $tampil->title ?></a></h2>
+                    <h2><a href="<?php echo base_url() . 'page/detail_buletin/' . $tampil->slug_title ?>"><?php echo $tampil->title ?></a></h2>
                   </div>
                 </div>
                 <div class="article-details">
                   <div class="article-cta">
-                    <a href="<?php echo base_url() . 'page/detail_artikel/' . $tampil->slug_title ?>" id="tombol" class="btn btn-primary">Selengkapnya</a>
+                    <a href="<?php echo base_url() . 'page/detail_buletin/' . $tampil->slug_title ?>" id="tombol" class="btn btn-primary">Selengkapnya</a>
                   </div>
                   <br>
                   <p>oleh <b><?php echo $tampil->name; ?></b> <span style="float:right"> <?php echo format_indo($tampil->date_created) ?> </span> </p>
@@ -64,14 +64,7 @@
             <?php } ?>
 
           </div>
-          <br>
-          <div>
-
-            <h4>Lihat Berdasarkan Kategori Artikel:</h4>
-            <?php foreach ($kategori as $k) { ?>
-              <a href="<?php echo base_url() . 'page/artikel_kategori/' . $k->id_kategori ?>" id="tombol" class="btn btn-primary"><?php echo $k->kategori ?></a>
-            <?php } ?>
-          </div>
+        
         </div>
       </div>
     </div>
@@ -84,7 +77,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h1 id="header-article" class="text-center">Kumpulan Artikel BEM UNDIP</h1>
+            <h1 id="header-article" class="text-center">Kumpulan Buletin BEM UNDIP</h1>
             <hr style="margin-bottom:50px;">
           </div>
           <?php if (empty($post)) : ?>
@@ -97,16 +90,16 @@
 
               <article  data-aos="fade-up" data-aos-easing="ease"  id="box-article" class="article">
                 <div class="article-header">
-                  <div class="article-image" data-background="<?php echo base_url() . 'assets/images/' . $tampil->thumbnail ?>">
+                  <div class="article-image" data-background="<?php echo base_url() . '../bemundip/assets/images/' . $tampil->thumbnail ?>">
                   </div>
                   <div class="article-title">
-                    <h2><a href="<?php echo base_url() . 'page/detail_artikel/' . $tampil->slug_title ?>"><?php echo  word_limiter($tampil->title, 6) ?></a></h2>
+                    <h2><a href="<?php echo base_url() . 'page/detail_buletin/' . $tampil->slug_title ?>"><?php echo  word_limiter($tampil->title, 6) ?></a></h2>
                   </div>
                 </div>
                 <div class="article-details">
                   <p> <?php echo word_limiter($tampil->content, 15) ?> </p>
                   <div class="article-cta">
-                    <a href="<?php echo base_url() . 'page/detail_artikel/' . $tampil->slug_title ?>" id="tombol" class="btn btn-primary">Read More</a>
+                    <a href="<?php echo base_url() . 'page/detail_buletin/' . $tampil->slug_title ?>" id="tombol" class="btn btn-primary">Read More</a>
                   </div>
                   <p style="font-size: 10px; margin-top:20px; line-height:1.75em;">oleh <b style="color: rgba(22, 69, 112, 1) "><?php echo $tampil->name; ?></b> <br> <?php echo format_indo($tampil->date_created) ?> </p>
 
@@ -124,10 +117,9 @@
 
   </div>
   <div class="clearfix">
-    <?= $this->pagination->create_links(); ?>
+    <?= $this->pagination_buletin->create_links(); ?>
   </div>
   <br><br><br>
-  <?php $this->load->view("landingpage/template/formaspirasi"); ?>
 
   <div style="color: black;">
     <?php $this->load->view("landingpage/template/footer-page"); ?>

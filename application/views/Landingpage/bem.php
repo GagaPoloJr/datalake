@@ -28,29 +28,24 @@
     <div class="wrapper-box">
         <div id="wrapper-box" class="container">
             <div class="row text-center">
-                <div class="col-md-4">
-                <a target="_blank" href="https://www.instagram.com/bemundip/">
-                <i class="fa fa-info-circle" style="font-size:36px;"></i>
-             </a>
-                    
-                    <h5>Info Survei</h5>
+                <div class="col-md-6">
+                    <a target="_blank" href="<?php echo base_url() . 'page/list_buletin' ?>">
+                        <i class="fas fa-newspaper fa-4x" style="color:#ff8100;"></i>
+                    </a>
+                    <h3>Buletin</h3>
+                    <h4><?php echo $count_buletin['total_b']; ?></h4>
                 </div>
-                <div class="col-md-4">
-                <a target="_blank" href="https://www.instagram.com/bemundip/">
-                <i class="fa fa-info-circle" style="font-size:36px;"></i>
+                <div class="col-md-6">
+                    <a target="_blank" href="<?php echo base_url() . 'page/informasi' ?>">
+                        <i class="fas fa-info-circle fa-4x" style="color:#ff8100;"></i>
 
-             </a>
-                    
-                    <h5>Info Survei</h5>
-                </div>
-                <div class="col-md-4">
-                <a target="_blank" href="https://www.instagram.com/bemundip/">
-                <i class="fa fa-info-circle" style="font-size:36px;"></i>
+                    </a>
 
-             </a>
-                    
-                    <h5>Info Survei</h5>
+                    <h3>Informasi</h3>
+                    <h4><?php echo $count_informasi['total_in']; ?></h4>
+
                 </div>
+
             </div>
 
         </div>
@@ -61,7 +56,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h2 style="font-weight: 900; text-transform:uppercase; margin-bottom: 20px">Undip Dalam Angka</h2>
+                    <h2 style="color: white;font-weight: 900; text-transform:uppercase; margin-bottom: 40px">universitas diponegoro</h2>
                 </div>
                 <div class="col-md-4">
                     <h4>Fakultas</h4>
@@ -103,11 +98,42 @@
                     <h4>Himpunan</h4>
                     <h1><?php echo $counting['himpunan'] ?></h1>
                 </div>
-               
+
             </div>
         </div>
     </div>
     <br><br><br>
+    <section class="informasi-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="about-title">Informasi Terkini</h2>
+                </div>
+                <?php foreach ($informasi as $info): ?>
+
+                <div id="card-info" class="col-md-6">
+                    <div  class="card">
+                    <img class="card-img-top" width="100" height="80" class="mr-3" src="<?php echo base_url() . '../bemundip/assets/images/' . $info->thumbnail; ?>" alt="Generic placeholder image">
+
+                        <div class="card-body">
+                            <h4 class="card-title"><?php echo $info->title ?></h4>
+                            <?php if($info->status == "no"): ?>
+                                <h6 class="badge badge-warning card-subtitle mb-2 ">Data Sedang Di proses</h6>
+                            <?php else: ?>
+                                <h6 class="badge badge-success card-subtitle mb-2 ">Data Selesai Di proses</h6>
+                            <?php endif ?>
+                            <p class="card-text"><?php echo $info->content ?></p>
+                            <a class="btn btn-info" href="<?php echo base_url (). 'page/detail_info/' . $info->slug_title ?>" class="card-link">Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+               <div class="col-lg-12  text-center">
+                   <a class="btn btn-info" href="<?php echo base_url (). 'page/informasi'?>">Lihat Semua</a>
+               </div>
+            </div>
+        </div>
+    </section>
     <section class="artikel-area">
         <div class="col-12">
             <!-- <p class="btn btn-danger">Buletin</p> -->
@@ -115,14 +141,14 @@
         </div>
         <div class="row">
             <?php if (empty($terbaru)) { ?>
-                <h3 data-aos="fade-up" id="empty-berita" class="badge badge-info">Yah Belum Ada Berita</h3>
+                <h3 data-aos="fade-up" id="empty-berita" class="badge badge-info">Buletin belum ada</h3>
             <?php } else {
             ?>
                 <?php foreach ($terbaru as $t) { ?>
                     <div data-aos="fade-left" class="galeri-artikel col-md-4">
-                        <img id="gambar-artikel" class="img-fluid" src="<?php echo base_url() . 'assets/images/' . $t->thumbnail ?>" alt="">
+                        <img id="gambar-artikel" class="img-fluid" src="<?php echo base_url() . '../bemundip/assets/images/' . $t->thumbnail ?>" alt="">
                         <div class="overlay-title">
-                            <a href="<?php echo base_url() . 'page/detail_artikel/' . $t->slug_title ?>">
+                            <a href="<?php echo base_url() . 'page/detail_buletin/' . $t->slug_title ?>">
                                 <h4 data-aos="fade-right"><?php echo word_limiter($t->title, 5) ?></h4>
                                 <h5 data-aos="fade-right" class="badge badge-info">Lihat Selengkapnya</h5>
                             </a>
@@ -130,29 +156,25 @@
                     </div>
                 <?php } ?>
             <?php } ?>
-
+            <div class="col-lg-12  text-center">
+                   <a style="margin: 20px 0;" class="btn btn-info" href="<?php echo base_url (). 'page/list_buletin'?>">Lihat Semua</a>
+               </div>
         </div>
     </section>
     <br><br>
-    <!-- <section class="video-bem">
-        <div data-aos="fade-up" data-aos-delay="50" data class="header-video">
-            <h1 class="text-center" style="color: white; font-weight:700">ThrowBack</h1>
-            <h4 class="text-center" style="color: white;">ODM UNDIP 2019</h4>
+    <section class="about-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="about-title">Apa Itu Datalake BEM Undip?</h2>
+                </div>
+                <div class="col-md-12">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="responsive-youtube">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-uF7edaskYI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </section> -->
+    </section>
 
-    <!-- <div data-aos="slide-up" data-aos-offset="100" class="wave-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#daab43" fill-opacity="1" d="M0,32L48,32C96,32,192,32,288,58.7C384,85,480,139,576,138.7C672,139,768,85,864,74.7C960,64,1056,96,1152,122.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-    </div> -->
-    <!-- <section class="third-area">
-        <?php $this->load->view("landingpage/template/formaspirasi"); ?>
-
-    </section> -->
     <?php $this->load->view("landingpage/template/footer-page"); ?>
 
 
