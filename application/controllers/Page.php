@@ -95,7 +95,12 @@ class Page extends CI_Controller
         $data['right_post'] = $this->buletin->get_right_buletin();
         $this->load->view('Page/detail_buletin', $data);
     }
-
+    public function database()
+    {
+        $data['title'] = "Database BEM UNDIP 2020";
+        $data['counting'] = $this->db->query('select * from database_bem')->row_array();
+        $this->load->view('Page/database', $data);
+    }
 
     public function proker()
     {
@@ -106,6 +111,7 @@ class Page extends CI_Controller
     public function struktur()
     {
         $data['title'] = "Profile BEM UNDIP 2020";
+        
         $this->load->view('Landingpage/struktur', $data);
     }
 

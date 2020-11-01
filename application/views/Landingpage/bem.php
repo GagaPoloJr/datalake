@@ -109,28 +109,29 @@
                 <div class="col-md-12 text-center">
                     <h2 class="about-title">Informasi Terkini</h2>
                 </div>
-                <?php foreach ($informasi as $info): ?>
+                <?php foreach ($informasi as $info) : ?>
 
-                <div id="card-info" class="col-md-6">
-                    <div  class="card">
-                    <img class="card-img-top" width="100" height="80" class="mr-3" src="<?php echo base_url() . '../bemundip/assets/images/' . $info->thumbnail; ?>" alt="Generic placeholder image">
+                    <div id="card-info" class="col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" width="100" height="80" class="mr-3" src="<?php echo base_url() . '../bemundip/assets/images/' . $info->thumbnail; ?>" alt="Generic placeholder image">
 
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $info->title ?></h4>
-                            <?php if($info->status == "no"): ?>
-                                <h6 class="badge badge-warning card-subtitle mb-2 ">Data Sedang Di proses</h6>
-                            <?php else: ?>
-                                <h6 class="badge badge-success card-subtitle mb-2 ">Data Selesai Di proses</h6>
-                            <?php endif ?>
-                            <p class="card-text"><?php echo $info->content ?></p>
-                            <a class="btn btn-info" href="<?php echo base_url (). 'page/detail_info/' . $info->slug_title ?>" class="card-link">Selengkapnya</a>
+                            <div class="card-body">
+                                <h4 class="card-title"><?php echo $info->title ?></h4>
+                                <?php if ($info->status == "no") : ?>
+                                    <h6 class="badge badge-warning card-subtitle mb-2 ">Data Sedang Di proses</h6>
+                                <?php else : ?>
+                                    <h6 class="badge badge-success card-subtitle mb-2 ">Data Selesai Di proses</h6>
+                                <?php endif ?>
+                                <p><?php echo format_indo( $info->date_created) ?></p>
+                                <p class="card-text"><?php echo word_limiter($info->content,5) ?></p>
+                                <a class="btn btn-info" href="<?php echo base_url() . 'page/detail_info/' . $info->slug_title ?>" class="card-link">Selengkapnya</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
-               <div class="col-lg-12  text-center">
-                   <a class="btn btn-info" href="<?php echo base_url (). 'page/informasi'?>">Lihat Semua</a>
-               </div>
+                <div class="col-lg-12  text-center">
+                    <a class="btn btn-info" href="<?php echo base_url() . 'page/informasi' ?>">Lihat Semua</a>
+                </div>
             </div>
         </div>
     </section>
@@ -157,8 +158,8 @@
                 <?php } ?>
             <?php } ?>
             <div class="col-lg-12  text-center">
-                   <a style="margin: 20px 0;" class="btn btn-info" href="<?php echo base_url (). 'page/list_buletin'?>">Lihat Semua</a>
-               </div>
+                <a style="margin: 20px 0;" class="btn btn-info" href="<?php echo base_url() . 'page/list_buletin' ?>">Lihat Semua</a>
+            </div>
         </div>
     </section>
     <br><br>
@@ -185,6 +186,7 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url() . 'assets/js/jquery.timeago.js' ?>"></script>
     <script>
         $(window).scroll(function() {
             $('nav').toggleClass('shrink', $(this).scrollTop() > 0);
@@ -208,6 +210,11 @@
             });
 
         })();
+    </script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery("time.timeago").timeago();
+        });
     </script>
 
 

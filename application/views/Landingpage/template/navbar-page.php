@@ -19,7 +19,7 @@
                     </div>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link <?php if($this->uri->uri_string() == 'page/proker') { echo 'active'; } ?>" href="<?php echo base_url() .'page/proker'?>">DATABASE</a>
+                    <a class="nav-link <?php if($this->uri->uri_string() == 'page/database') { echo 'active'; } ?>" href="<?php echo base_url() .'page/proker'?>">DATABASE</a>
                 </li>
               
                 <li class="nav-item">
