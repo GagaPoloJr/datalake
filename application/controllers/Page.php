@@ -9,8 +9,7 @@ class Page extends CI_Controller
         $this->load->model('Model_informasi');
 
         $this->load->helper('text');
-		$this->load->helper('kebutuhan_helper');
-
+        $this->load->helper('kebutuhan_helper');
     }
     public function index()
     {
@@ -52,7 +51,6 @@ class Page extends CI_Controller
         $data['start'] = $this->uri->segment(3);
         $data['informasi_post'] = $this->Model_informasi->getInformasi($config['per_page'], $data['start']);
         $this->load->view("Page/informasi", $data);
-
     }
     public function detail_info($slug_title)
     {
@@ -87,7 +85,7 @@ class Page extends CI_Controller
 
         $this->load->view("Page/buletin", $data);
     }
-   
+
     public function detail_buletin($slug_title)
     {
         $this->load->model('Model_buletin', 'buletin');
@@ -102,6 +100,13 @@ class Page extends CI_Controller
         $this->load->view('Page/database', $data);
     }
 
+    public function about()
+    {
+        $data['title'] = "About Datalake";
+        // $data['counting'] = $this->db->query('select * from database_bem')->row_array();
+        $this->load->view('Page/about', $data);
+    }
+
     public function proker()
     {
         $data['title'] = "Proker BEM UNDIP 2020";
@@ -111,9 +116,7 @@ class Page extends CI_Controller
     public function struktur()
     {
         $data['title'] = "Profile BEM UNDIP 2020";
-        
+
         $this->load->view('Landingpage/struktur', $data);
     }
-
-   
 }

@@ -11,24 +11,43 @@
             <ul class="nav navbar-nav ml-auto">
 
                 <!-- <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle <?php if(($this->uri->uri_string() == 'page/tentang') || ($this->uri->uri_string() == 'page/bem_fakultas') ) { echo 'active'; } ?> " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
+                    <a class="nav-link dropdown-toggle <?php if (($this->uri->uri_string() == 'page/tentang') || ($this->uri->uri_string() == 'page/bem_fakultas')) {
+                                                            echo 'active';
+                                                        } ?> " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
                     <div  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a id="drop-style" class="dropdown-item <?php if($this->uri->uri_string() == 'page/tentang') { echo 'active'; } ?> " href="<?php echo base_url(). 'page/tentang' ?>">Tentang BEM UNDIP</a>
-                        <a  id="drop-style"class="dropdown-item <?php if($this->uri->uri_string() == 'page/bem_fakultas') { echo 'active'; } ?> " href="<?php echo base_url(). 'page/bem_fakultas' ?>">BEM FAKULTAS</a>
-                        <a id="drop-style" class="dropdown-item <?php if($this->uri->uri_string() == 'page/maintanance') { echo 'active'; } ?> "  href="<?php echo base_url() .'page/maintanance'?>">Something else here</a>
+                        <a id="drop-style" class="dropdown-item <?php if ($this->uri->uri_string() == 'page/tentang') {
+                                                                    echo 'active';
+                                                                } ?> " href="<?php echo base_url() . 'page/tentang' ?>">Tentang BEM UNDIP</a>
+                        <a  id="drop-style"class="dropdown-item <?php if ($this->uri->uri_string() == 'page/bem_fakultas') {
+                                                                    echo 'active';
+                                                                } ?> " href="<?php echo base_url() . 'page/bem_fakultas' ?>">BEM FAKULTAS</a>
+                        <a id="drop-style" class="dropdown-item <?php if ($this->uri->uri_string() == 'page/maintanance') {
+                                                                    echo 'active';
+                                                                } ?> "  href="<?php echo base_url() . 'page/maintanance' ?>">Something else here</a>
                     </div>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link <?php if($this->uri->uri_string() == 'page/database') { echo 'active'; } ?>" href="<?php echo base_url() .'page/proker'?>">DATABASE</a>
+                    <a class="nav-link <?php if ($this->uri->uri_string() == 'page/database') {
+                                            echo 'active';
+                                        } ?>" href="<?php echo base_url() . 'page/database' ?>">DATABASE</a>
                 </li>
-              
+
                 <li class="nav-item">
-                    <a class="nav-link <?php if($this->uri->uri_string() == 'page/list_buletin') { echo 'active'; } ?>" href="<?php echo base_url() .'page/list_buletin'?>">BULETIN</a>
+                    <a class="nav-link <?php if ($this->uri->uri_string() == 'page/list_buletin') {
+                                            echo 'active';
+                                        } ?>" href="<?php echo base_url() . 'page/list_buletin' ?>">BULETIN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php if($this->uri->uri_string() == 'page/informasi') { echo 'active'; } ?>" href="<?php echo base_url() .'page/informasi'?>">INFORMASI</a>
+                    <a class="nav-link <?php if ($this->uri->uri_string() == 'page/informasi') {
+                                            echo 'active';
+                                        } ?>" href="<?php echo base_url() . 'page/informasi' ?>">INFORMASI</a>
                 </li>
-               
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($this->uri->uri_string() == 'page/about') {
+                                            echo 'active';
+                                        } ?>" href="<?php echo base_url() . 'page/about' ?>">ABOUT</a>
+                </li>
+
             </ul>
 
         </div>

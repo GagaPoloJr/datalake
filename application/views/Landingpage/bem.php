@@ -15,11 +15,11 @@
 
                     <div class="col-md-6 col-sm-12" style="padding-top: 90px;">
                         <h1 class="animate__animated animate__fadeInLeft animate__delay-1s">DATALAKE BEM UNDIP 2020</h1>
-                        <p class="animate__animated animate__fadeInLeft animate__delay-2s" style="color: #daab43;"> <i>“Karyakan Rasa, Karsakan Karya”</i> </p>
+                        <p class="animate__animated animate__fadeInLeft animate__delay-2s" style="color: #daab43;"> <i>“PEMRAKARSA MAHAKARYA”</i> </p>
                         <!-- <h1>PEMRAKARSA MAHAKARYA</h2> -->
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <img class="animate__animated animate__fadeInRight animate__delay-1s" id="logo-bem" src="<?php echo base_url() . 'assets/img/logo.png' ?>" alt="logo-bem-u-2020">
+                        <img class="animate__animated animate__fadeInRight animate__delay-1s" id="logo-bem" src="<?php echo base_url() . 'assets/img/databemundip.png' ?>" alt="logo-bem-u-2020" style="width: 50%;">
                     </div>
                 </div>
             </div>
@@ -122,8 +122,8 @@
                                 <?php else : ?>
                                     <h6 class="badge badge-success card-subtitle mb-2 ">Data Selesai Di proses</h6>
                                 <?php endif ?>
-                                <p><?php echo format_indo( $info->date_created) ?></p>
-                                <p class="card-text"><?php echo word_limiter($info->content,5) ?></p>
+                                <p><?php echo format_indo($info->date_created) ?></p>
+                                <p class="card-text"><?php echo word_limiter($info->content, 5) ?></p>
                                 <a class="btn btn-info" href="<?php echo base_url() . 'page/detail_info/' . $info->slug_title ?>" class="card-link">Selengkapnya</a>
                             </div>
                         </div>
@@ -169,8 +169,8 @@
                 <div class="col-md-12 text-center">
                     <h2 class="about-title">Apa Itu Datalake BEM Undip?</h2>
                 </div>
-                <div class="col-md-12">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class="col-md-12 text-center">
+                    <p>Data Lake merupakan sebuah portal penghimpun data / database di lingkup Undip yang dapat diakses publik serta wadah publikasi hasil survei maupun infografis berbasis data yang dilakukan dan diolah oleh Biro Statistik BEM Undip.</p>
                 </div>
             </div>
         </div>
