@@ -78,7 +78,6 @@
                         <p class='badge badge-success'>Data sudah di proses</p>
 
                     <?php endif ?>
-                    <p><?= $post['content']; ?></p>
 
                     <img style="max-width: 100%;" src="<?php echo base_url() . '../bemundip/assets/images/' . $post['thumbnail']; ?>" alt="">
                     <p><?= $post['content']; ?></p>

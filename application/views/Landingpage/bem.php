@@ -109,6 +109,10 @@
                 <div class="col-md-12 text-center">
                     <h2 class="about-title">Informasi Terkini</h2>
                 </div>
+                <?php if (empty($informasi)) { ?>
+                <h3 data-aos="fade-up" id="empty-berita" class="badge badge-info">Informasi belum ada</h3>
+            <?php } else {
+            ?>
                 <?php foreach ($informasi as $info) : ?>
 
                     <div id="card-info" class="col-md-6">
@@ -129,6 +133,8 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
+            <?php } ?>
+
                 <div class="col-lg-12  text-center">
                     <a class="btn btn-info" href="<?php echo base_url() . 'page/informasi' ?>">Lihat Semua</a>
                 </div>
@@ -172,6 +178,9 @@
                 <div class="col-md-12 text-center">
                     <p>Data Lake merupakan sebuah portal penghimpun data / database di lingkup Undip yang dapat diakses publik serta wadah publikasi hasil survei maupun infografis berbasis data yang dilakukan dan diolah oleh Biro Statistik BEM Undip.</p>
                 </div>
+                <div class="col-lg-12  text-center">
+                <a style="margin: 20px 0;" class="btn btn-info" href="<?php echo base_url() . 'page/about' ?>">Selengkapnya</a>
+            </div>
             </div>
         </div>
     </section>
