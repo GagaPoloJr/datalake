@@ -23,8 +23,9 @@
         body {
             color: #6c757d;
         }
-        .card{
-    box-shadow: 0 4px 8px rgba(204, 204, 204, 0.75);
+
+        .card {
+            box-shadow: 0 4px 8px rgba(204, 204, 204, 0.75);
 
         }
     </style>
@@ -135,6 +136,13 @@
                             </tr>
                         </tfoot>
                     </table>
+                    <?php if ($counting['excel'] !== "") { ?>
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <?php echo $counting['excel']; ?>
+                            <!-- <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGLCvhMaK4YCUtA9Z5HLUdtUPaqkESIlKi_LKzL4ENGAJxXceCDWaf0JKVj0-R04uw30kG65mlY85y/pub?output=xlsx"></iframe> -->
+                            <!-- <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGLCvhMaK4YCUtA9Z5HLUdtUPaqkESIlKi_LKzL4ENGAJxXceCDWaf0JKVj0-R04uw30kG65mlY85y/pubhtml"></iframe> -->
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

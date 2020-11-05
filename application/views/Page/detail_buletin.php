@@ -33,7 +33,7 @@
             height: 100%;
         }
 
-        .page-footer{
+        .page-footer {
             color: black;
         }
     </style>
@@ -61,6 +61,16 @@
 
                     <img style="max-width: 100%;" src="<?php echo base_url() . '../bemundip/assets/images/' . $post['thumbnail']; ?>" alt="">
                     <p><?= $post['content']; ?></p>
+                    <?php if ($post['pdf'] !== "") { ?>
+                        <?php $link = $post['pdf']  ?>
+                        <?php $str = $post['pdf']  ?>
+                        <?php $str = chop($str, "/view?usp=sharing") ?>
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <iframe class="embed-responsive-item" src="<?= $str; ?>/preview" type="application/pdf" allowfullscreen></iframe>
+                        </div>
+                        <br>
+                        <button id="linkpdf" class="btn btn-primary">Download PDF</button>
+                    <?php } ?>
                 </div>
                 <div class="col-sm-12 col-lg-4 post-right">
                     <div class="card">
@@ -69,42 +79,41 @@
                         </div>
                         <div class="card-body">
                             <ul class="list-unstyled">
-                                <?php if(empty($right_post)) { 
-                                    echo "Artikel Belum Tersedia"; 
-                                }
-                                    else { ?>
-                                    
-                                <?php foreach ($right_post as $rp) { ?>
-                                    <a id="link-artikel" href="<?php echo base_url() . 'page/detail_buletin/' . $rp->slug_title ?>">
-                                        <li class="media">
-                                            <img width="100" height="80" class="mr-3" src="<?php echo base_url() . '../bemundip/assets/images/' . $rp->thumbnail; ?>" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 id="right-header" class="mt-0 mb-1"><?= word_limiter($rp->title, 5); ?></h5>
-                                                <p><?= word_limiter($rp->content, 20); ?></p>
-                                                <p style="font-size: 12px;">oleh <b><?php echo $rp->name; ?></b> <span> <br> <?php echo format_indo($rp->date_created) ?> </span> </p>
-                                                <hr>
-                                            </div>
+                                <?php if (empty($right_post)) {
+                                    echo "Artikel Belum Tersedia";
+                                } else { ?>
 
-                                        </li>
-                                    </a>
-                                <?php } ?>
+                                    <?php foreach ($right_post as $rp) { ?>
+                                        <a id="link-artikel" href="<?php echo base_url() . 'page/detail_buletin/' . $rp->slug_title ?>">
+                                            <li class="media">
+                                                <img width="100" height="80" class="mr-3" src="<?php echo base_url() . '../bemundip/assets/images/' . $rp->thumbnail; ?>" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 id="right-header" class="mt-0 mb-1"><?= word_limiter($rp->title, 5); ?></h5>
+                                                    <p><?= word_limiter($rp->content, 20); ?></p>
+                                                    <p style="font-size: 12px;">oleh <b><?php echo $rp->name; ?></b> <span> <br> <?php echo format_indo($rp->date_created) ?> </span> </p>
+                                                    <hr>
+                                                </div>
+
+                                            </li>
+                                        </a>
+                                    <?php } ?>
                                 <?php } ?>
 
                             </ul>
                         </div>
-                        <?php if(!empty($right_post)) { ?>
-                         <a href="<?php echo base_url() . 'page/list_buletin' ?>" class="btn btn-primary">View More</a>
+                        <?php if (!empty($right_post)) { ?>
+                            <a href="<?php echo base_url() . 'page/list_buletin' ?>" class="btn btn-primary">View More</a>
                         <?php } ?>
-                                   
+
 
                     </div>
-                 
+
                 </div>
             </div>
         </div>
     </section>
 
-  
+
     <?php $this->load->view("landingpage/template/footer-page"); ?>
 
 
@@ -114,6 +123,14 @@
     <!-- Optional JavaScript -->
 
     <script>
+        $(document).ready(function() {
+            $('#linkpdf').on('click', function() {
+                window.open("<?= $link ?>")
+                // console.log("HALO")
+                return false;
+            });
+        });
+
         $(window).scroll(function() {
             $('nav').toggleClass('shrink', $(this).scrollTop() > 0);
         });

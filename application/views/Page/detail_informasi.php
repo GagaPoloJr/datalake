@@ -82,6 +82,16 @@
 
                     <img style="max-width: 100%;" src="<?php echo base_url() . '../bemundip/assets/images/' . $post['thumbnail']; ?>" alt="">
                     <p><?= $post['content']; ?></p>
+                    <?php if ($post['pdf'] !== "") { ?>
+                        <?php $link = $post['pdf']  ?>
+                        <?php $str = $post['pdf']  ?>
+                        <?php $str = chop($str, "/view?usp=sharing") ?>
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <iframe class="embed-responsive-item" src="<?= $str; ?>/preview" type="application/pdf" allowfullscreen></iframe>
+                        </div>
+                        <br>
+                        <button id="linkpdf" class="btn btn-primary">Download PDF</button>
+                    <?php } ?>
                 </div>
                 <div class="col-sm-12 col-lg-4 post-right">
                     <div class="col-12">
@@ -131,6 +141,15 @@
     <!-- Optional JavaScript -->
 
     <script>
+        $(document).ready(function() {
+            $('#linkpdf').on('click', function() {
+                window.open("<?= $link ?>")
+                // console.log("HALO")
+                return false;
+            });
+        });
+
+
         $(window).scroll(function() {
             $('nav').toggleClass('shrink', $(this).scrollTop() > 0);
         });
